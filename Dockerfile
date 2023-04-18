@@ -10,5 +10,8 @@ COPY files/3.txt /app/
 RUN echo '===3===' && tree /workspace && tree /app && echo '===3==='
 COPY files/4.txt /app/nested/
 RUN echo '===4===' && tree /workspace && tree /app && echo '===4==='
+COPY files/5.txt /workspace/
+COPY files/6.txt /workspace/nested
+# 5,6 の後に RUN しないようにする
 
 CMD ["sh", "-c", "tree /workspace && tree /app"]
