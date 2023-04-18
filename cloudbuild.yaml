@@ -1,0 +1,8 @@
+steps:
+  - id: build-docker-image
+    name: gcr.io/kaniko-project/executor:latest
+    args:
+      - --dockerfile=Dockerfile
+      - --destination=asia.gcr.io/$PROJECT_ID/kaniko-test
+      - --cache=true
+      - --cache-ttl=24h
